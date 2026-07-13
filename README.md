@@ -1,1 +1,3 @@
 # rtxslassistant-privacy
+This repo is for the privacy policy of unlisted Chrome extension Rentex SL+ Assistant
+This extension does not collect, store, or transmit any data to the developer or any third party. It operates entirely within your existing authenticated session on *.rtprosl.com: it reads the session token and API responses your browser already has from RTPro, uses them to make additional same-origin requests to RTPro on your behalf, and stores two small display preferences locally in your browser via chrome.storage.local. No analytics, tracking, or external network requests of any kind.
