@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Rentex SL+ Assistant</title>
+<style>
+  :root {
+    color-scheme: light dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.55;
+    color: #1a1d21;
+    background: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #E8ECF0; background: #14181D; }
+    .card { background: #1C222A; border-color: #2E3742; }
+    .band { background: #ffffff; }
+    a { color: #9cc0ff; }
+    code { background: #262D36; color: #E8ECF0; }
+  }
+  .band {
+    background: #ffffff;
+    border-bottom: 3px solid #ED2224;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .band img { height: 24px; }
+  .band span { font-weight: 800; font-size: 14px; letter-spacing: .04em;
+    text-transform: uppercase; color: #14181D; }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+  }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .updated { color: #8A94A3; font-size: 13px; margin-bottom: 28px; }
+  h2 { font-size: 15px; margin: 32px 0 8px; letter-spacing: .02em; }
+  p, li { font-size: 14.5px; color: inherit; }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  code {
+    background: #f1f3f5; color: #d0342c; padding: 1px 6px; border-radius: 4px;
+    font-family: ui-monospace, Consolas, monospace; font-size: 13px;
+  }
+  .card {
+    border: 1px solid #e2e5e9;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-top: 10px;
+    background: #fafbfc;
+  }
+  .card h3 { margin: 0 0 6px; font-size: 13px; text-transform: uppercase;
+    letter-spacing: .08em; color: #8A94A3; }
+  footer { margin-top: 48px; font-size: 12.5px; color: #8A94A3; }
+  a { color: #1a5fd0; }
+</style>
+</head>
+<body>
+  <div class="band">
+    <span>Rentex SL+ Assistant</span>
+  </div>
+  <main>
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: <!-- update this date whenever the policy changes --> 2026-07-13</div>
+
+    <p>
+      Rentex SL+ Assistant is a browser extension built for internal use with
+      RTPro (the rental &amp; inventory management system hosted at
+      <code>*.rtprosl.com</code>). It adds a side panel that shows the
+      accessory checklist and inspection steps for the item currently under
+      QC, and lets techs attach, detach, and pass inspection steps directly
+      from that panel.
+    </p>
+
+    <h2>Short version</h2>
+    <p>
+      This extension does not collect, store, or transmit any data to its
+      developer or to any third party. Everything it does happens inside
+      your own already-authenticated RTPro session, talking only to
+      <code>*.rtprosl.com</code>.
+    </p>
+
+    <h2>What it accesses, and why</h2>
+
+    <div class="card">
+      <h3>Session / authentication data</h3>
+      <p>
+        The extension reads the bearer token and session context headers
+        (location, workstation, hub, etc.) that RTPro's own web app already
+        attaches to its own requests. This is used only to make additional
+        same-origin API calls to <code>*.rtprosl.com</code> as the currently
+        logged-in user — for example, fetching an accessory list or
+        attaching a scanned barcode. This data is kept in memory for the
+        life of the browser tab/panel and is never written to disk, never
+        logged, and never sent anywhere other than <code>*.rtprosl.com</code>.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>RTPro application data</h3>
+      <p>
+        To build the checklist, the extension reads RTPro's own API
+        responses — equipment, accessory, inspection, and order data —
+        directly from <code>*.rtprosl.com</code>. This data is same-origin,
+        belongs to the same authenticated session it was read from, and is
+        displayed only to the user that session belongs to.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Local preferences</h3>
+      <p>
+        Two small UI preferences — whether completed checklist items are
+        hidden, and whether audio scan-feedback tones are muted — are saved
+        locally in your browser via the standard <code>chrome.storage.local</code>
+        API, so they persist between sessions. This is not personal or
+        business data, and it never leaves your browser.
+      </p>
+    </div>
+
+    <h2>What this extension does not do</h2>
+    <ul>
+      <li>It does not send data to the developer, an analytics service, or any server other than <code>*.rtprosl.com</code>.</li>
+      <li>It does not use cookies, trackers, or fingerprinting.</li>
+      <li>It does not sell or share data with third parties.</li>
+      <li>It does not run a background service that phones home — there is no external backend.</li>
+      <li>It does not operate on any site other than <code>*.rtprosl.com</code>.</li>
+    </ul>
+
+    <h2>Permissions</h2>
+    <ul>
+      <li><strong>Host access to <code>*.rtprosl.com</code></strong> — required to read RTPro's own session/network traffic and make same-origin API calls on the user's behalf.</li>
+      <li><strong>Side panel</strong> — used to render the extension's UI docked beside the RTPro tab.</li>
+      <li><strong>Storage</strong> — used only for the two local preferences described above.</li>
+    </ul>
+
+    <h2>Changes to this policy</h2>
+    <p>
+      If this extension's data practices change, this page will be updated
+      and the "Last updated" date above will reflect the change.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy or the extension can be directed to
+      <!-- replace with an actual contact address or internal contact --> [contact email/team].
+    </p>
+
+    <footer>
+      Rentex SL+ Assistant — internal tool, not a public product.
+    </footer>
+  </main>
+</body>
+</html>
