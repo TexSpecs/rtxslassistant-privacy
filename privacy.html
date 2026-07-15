@@ -117,11 +117,24 @@
     <div class="card">
       <h3>Local preferences</h3>
       <p>
-        Two small UI preferences — whether completed checklist items are
+        A few small UI preferences — whether completed checklist items are
         hidden, and whether audio scan-feedback tones are muted — are saved
         locally in your browser via the standard <code>chrome.storage.local</code>
-        API, so they persist between sessions. This is not personal or
-        business data, and it never leaves your browser.
+        API, so they persist between sessions.
+      </p>
+      <p>
+        The extension also saves a small "resume pointer" (which module, and
+        which barcode or batch number you were last looking at) so that
+        closing and reopening the panel can pick back up where you left off.
+        This pointer is only ever used to re-fetch fresh data from RTPro on
+        reopen — the actual equipment, accessory, or inspection data itself
+        is never cached or stored, only re-read live each time.
+      </p>
+      <p>
+        None of this leaves your browser, and none of it is personal data
+        about you — it is UI state and RTPro's own identifiers (barcodes,
+        batch numbers) that describe what you were working on, not who you
+        are.
       </p>
     </div>
 
@@ -138,7 +151,7 @@
     <ul>
       <li><strong>Host access to <code>*.rtprosl.com</code></strong> — required to read RTPro's own session/network traffic and make same-origin API calls on the user's behalf.</li>
       <li><strong>Side panel</strong> — used to render the extension's UI docked beside the RTPro tab.</li>
-      <li><strong>Storage</strong> — used only for the two local preferences described above.</li>
+      <li><strong>Storage</strong> — used only for the local preferences and resume pointer described above.</li>
     </ul>
 
     <h2>Changes to this policy</h2>
